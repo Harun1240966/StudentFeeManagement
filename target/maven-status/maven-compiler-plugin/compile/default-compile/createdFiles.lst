@@ -1,0 +1,6 @@
+com\student\restfulangularjs\model\StudentManage.class
+com\student\restfulangularjs\dao\StudentHandler.class
+com\student\restfulangularjs\utils\CodeUtils.class
+com\student\restfulangularjs\rest\MessageRestService.class
+com\student\restfulangularjs\dao\DbConnection.class
+com\student\restfulangularjs\pojo\StudentBean.class

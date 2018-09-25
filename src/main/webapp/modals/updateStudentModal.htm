@@ -1,0 +1,96 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()">&times;</button>
+            <h4 class="modal-title">Modify Student</h4>
+        </div>
+        <div class="modal-body">
+            <form name="modalForm" class="form-horizontal">
+                <fieldset>			
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="student_name">Student Name <span class="required_field">*</span></label>
+                                <input type="text" id="student_name" class="form-control"
+                                       ng-model="modal_studentName" required="required" value="prod.name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="student_email">Email  <span class="required_field">*</span></label> 
+                                <input type="text" id="student_email" class="form-control" ng-model="modal_studentEmail" required="required" value="prod.email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="student_sex">Sex  <span class="required_field">*</span></label> 
+                                <input type="text" id="student_sex" class="form-control" ng-model="modal_studentSex" required="required" value="prod.sex">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_course">Course  <span class="required_field">*</span></label> 
+                                <input type="text" id="stu_course" class="form-control" ng-model="modal_studentCourse" required="required" value="prod.course">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_fee">Fee <span class="required_field">*</span></label>
+                                <input type="text" id="stu_fee" class="form-control"
+                                       ng-model="modal_studentFee" required="required" value="prod.fee">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_paid">Paid  <span class="required_field">*</span></label> 
+                                <input type="text" id="stu_paid" class="form-control" ng-model="modal_studentPaid" required="required" value="prod.paid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_due">Due <span class="required_field">*</span></label>
+                                <input type="text" id="stu_due" class="form-control"
+                                       ng-model="modal_studentDue" required="required" value="prod.due">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_address">Address  <span class="required_field">*</span></label> 
+                                <input type="text" id="stu_address" class="form-control" ng-model="modal_studentAddress" required="required" value="prod.address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-centered">
+                            <div class="control-group">
+                                <label class="control-label" for="stu_contact">Contact <span class="required_field">*</span></label>
+                                <input type="text" id="stu_contact" class="form-control"
+                                       ng-model="modal_studentContact" required="required" value="prod.contact">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+            <button ng-disabled="modalForm.$invalid" type="button" class="btn btn-primary" ng-click="ok()">Edit Student</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

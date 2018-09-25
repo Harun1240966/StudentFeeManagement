@@ -1,0 +1,35 @@
+textarea { resize:vertical; }
+
+.input-small input { width: 100px !important }
+
+.no-cursor input[disabled] { 
+	cursor: default !important;
+}
+
+.btn-cursor {
+	cursor: pointer;
+}
+
+.table-icon {
+	margin: 0 9px 0 0;
+	vertical-align:middle
+}
+
+.modal {
+    display: block;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #FFF8DC;
+}
+
+.required_field
+{
+	color: #ff0000;
+}
+
+.alert-error {
+	background-color: #FF4500;
+	border: 1px solid #FF6347;
+	color: #fff;
+}
