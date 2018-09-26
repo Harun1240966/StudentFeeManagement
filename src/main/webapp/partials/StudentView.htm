@@ -1,132 +1,158 @@
 <div class="well container">
-    <div class="well well-md" style="border: none !important">
-        <div class="row">
-            <div class="col-lg-8">
-            </div>
-            <!-- /.col-lg-6 -->
-            <div class="col-lg-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" ng-model="student_search"> <span class="input-group-btn">
-                        <span class="btn btn-default" type="button">Search</span>
-                    </span>
-                </div>
-                <!-- /input-group -->
-            </div>
-            <!-- /.col-lg-6 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name </th>
-                <th>Email</th>
-                <th>Sex</th>
-                <th>Course</th>
-                <th>Fee</th>
-                <th>Paid </th>
-                <th>Due </th>
-                <th>Address</th>
-                <th>Contact</th>
-                <th>Edit</th>
+	<div class="well well-md" style="border: none !important">
+		<div class="row">
+			<div class="col-lg-8"></div>
+			<!-- /.col-lg-6 -->
+			<div class="col-lg-4">
+				<div class="input-group">
+					<input type="text" class="form-control" ng-model="student_search">
+					<span class="input-group-btn"> <span class="btn btn-default"
+						type="button">Search</span>
+					</span>
+				</div>
+				<!-- /input-group -->
+			</div>
+			<!-- /.col-lg-6 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Sex</th>
+				<th>Course</th>
+				<th>Fee</th>
+				<th>Paid</th>
+				<th>Due</th>
+				<th>Address</th>
+				<th>Contact</th>
+				<th>Edit</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="animation" ng-repeat="prod in prodList| filter: student_search" >
-                <td>{{$index + 1}}</td>
-                <td>{{prod.name}}</td>
-                <td>{{prod.email}}</td>
-                <td>{{prod.sex}}</td>
-                <td>{{prod.course}}</td>
-                <td>{{prod.fee}}</td>
-                <td>{{prod.paid}}</td>
-                <td>{{prod.due}}</td>
-                <td>{{prod.address}}</td>
-                <td>{{prod.contact}}</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="animation"
+				ng-repeat="prod in prodList| filter: student_search">
+				<td>{{$index + 1}}</td>
+				<td>{{prod.name}}</td>
+				<td>{{prod.email}}</td>
+				<td>{{prod.sex}}</td>
+				<td>{{prod.course}}</td>
+				<td>{{prod.fee}}</td>
+				<td>{{prod.paid}}</td>
+				<td>{{prod.due}}</td>
+				<td>{{prod.address}}</td>
+				<td>{{prod.contact}}</td>
 
-                <td ng-controller="ModalDemoCtrl">					
-                    <div class="btn-group" role="toolbar">	
-                        <div class="btn btn-default" ng-click="open(prod.rollno)"><span title="Edit" class="glyphicon glyphicon-pencil btn-cursor"></span></div>				
-                        <div class="btn btn-default" confirmed-click="removeProduct(prod.rollno)" ng-confirm-click="Do you want to delete this Student?" ><span title="Delete" class="glyphicon glyphicon-remove btn-cursor"></span></div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+				<td ng-controller="ModalDemoCtrl">
+					<div class="btn-group" role="toolbar">
+						<div class="btn btn-default" ng-click="open(prod.rollno)">
+							<span title="Edit" class="glyphicon glyphicon-pencil btn-cursor"></span>
+						</div>
+						<div class="btn btn-default"
+							confirmed-click="removeProduct(prod.rollno)"
+							ng-confirm-click="Do you want to delete this Student?">
+							<span title="Delete"
+								class="glyphicon glyphicon-remove btn-cursor"></span>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
-    <div flash-alert active-class="in alert" class="fade">
-        <button type="button" class="close" ng-click="hide()">&times;</button>
-        <strong class="alert-heading">{{alert.heading}}</strong>
-        <span class="alert-message">{{flash.message}}</span>
-    </div>
+	<div flash-alert active-class="in alert" class="fade">
+		<button type="button" class="close" ng-click="hide()">&times;</button>
+		<strong class="alert-heading">{{alert.heading}}</strong> <span
+			class="alert-message">{{flash.message}}</span>
+	</div>
 
-    <button class="btn btn-danger" type="button" ng-hide="show" ng-show="!show" ng-click="show = !show">
-        <i class="glyphicon glyphicon-plus"></i> Add Student
-    </button>
+	<button class="btn btn-danger" type="button" ng-hide="show"
+		ng-show="!show" ng-click="show = !show">
+		<i class="glyphicon glyphicon-plus"></i> Add Student
+	</button>
 
-    <form name="addStuForm" class="form-horizontal" ng-show="show">
-        <fieldset>
-            <!-- Form Name -->
-            <legend>Add a new Student<span ng-click="show = !show" title="Close" class="glyphicon glyphicon-remove pull-right btn-cursor"></span></legend>
+	<form name="addStuForm" class="form-horizontal" ng-show="show">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>
+				Add a new Student<span ng-click="show = !show" title="Close"
+					class="glyphicon glyphicon-remove pull-right btn-cursor"></span>
+			</legend>
 
-            <!-- Row 1 -->
-            <div class=" col-md-6 col-centered">
+			<!-- Row 1 -->
+			<div class=" col-md-6 col-centered">
 
-                <div class="control-group">
-                    <label class="control-label" for="prod_name">Student Name <span class="required_field">*</span></label> 
-                    <input type="text" id="student_name" class="form-control" ng-model="studentName" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_brand">Email <span class="required_field">*</span></label>
-                    <input type="text" id="student_email" class="form-control" ng-model="email" required="required">
-                </div>
+				<div class="control-group">
+					<label class="control-label" for="prod_name">Student Name <span
+						class="required_field">*</span></label> <input type="text"
+						id="student_name" class="form-control" ng-model="studentName"
+						required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_brand">Email <span
+						class="required_field">*</span></label> <input type="text"
+						id="student_email" class="form-control" ng-model="email"
+						required="required">
+				</div>
 
-                <div class="control-group" >
-                    <label class="control-label" for="stu_sex">Sex  <span class="required_field">*</span></label> 
-                    <input type="text" id="student_sex" class="form-control" ng-model="sex" required="required">					
-                </div>
+				<div class="control-group">
+					<label class="control-label" for="stu_sex">Sex <span
+						class="required_field">*</span></label> <input type="text"
+						id="student_sex" class="form-control" ng-model="sex"
+						required="required">
+				</div>
 
-                <div class="control-group">
-                    <label class="control-label" for="prod_brand">Course  <span class="required_field">*</span></label>
-                    <input type="text" id="stu_course" class="form-control"
-                           ng-model="course" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_name">Fee  <span class="required_field">*</span></label> 
-                    <input type="text" id="stu_fee" class="form-control" ng-model="fee" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_brand">Paid  <span class="required_field">*</span></label>
-                    <input type="text" id="stu_paid" class="form-control"
-                           ng-model="paid" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_name">Due  <span class="required_field">*</span></label> 
-                    <input type="text" id="prod_name" class="form-control" ng-model="due" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_brand">Address  <span class="required_field">*</span></label>
-                    <input type="text" id="stu_address" class="form-control"
-                           ng-model="address" required="required">
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="prod_name">Contact  <span class="required_field">*</span></label> 
-                    <input type="text" id="stu_contact" class="form-control" ng-model="contact" required="required">
-                </div>
-            </div>
-        </fieldset>
-        <!-- Button -->
-        <div class=" col-md-6 control-group pull-right" style="margin-top: 20px">
-            <label class="control-label" for="add_student_btn"></label>
-            <div class="controls">
-                <button ng-disabled="addStuForm.$invalid" id="add_product_btn" name="add_product_btn" ng-click="addNewProduct()" class="btn btn-success">
-                    <i class="glyphicon glyphicon-plus"></i> Add Student!
-                </button>
-            </div>
-        </div>
+				<div class="control-group">
+					<label class="control-label" for="prod_brand">Course <span
+						class="required_field">*</span></label> <input type="text" id="stu_course"
+						class="form-control" ng-model="course" required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_name">Fee <span
+						class="required_field">*</span></label> <input type="text" id="stu_fee"
+						class="form-control" ng-model="fee" required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_brand">Paid <span
+						class="required_field">*</span></label> <input type="text" id="stu_paid"
+						class="form-control" ng-model="paid" required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_name">Due <span
+						class="required_field">*</span></label> <input type="text" id="prod_name"
+						class="form-control" ng-model="due" required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_brand">Address <span
+						class="required_field">*</span></label> <input type="text"
+						id="stu_address" class="form-control" ng-model="address"
+						required="required">
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="prod_name">Contact <span
+						class="required_field">*</span></label> <input type="text"
+						id="stu_contact" class="form-control" ng-model="contact"
+						required="required">
+				</div>
+			</div>
+		</fieldset>
+		<!-- Button -->
+		<div class=" col-md-6 control-group pull-right"
+			style="margin-top: 20px">
+			<label class="control-label" for="add_student_btn"></label>
+			<div class="controls">
+				<button ng-disabled="addStuForm.$invalid" id="add_product_btn"
+					name="add_product_btn" ng-click="addNewProduct()"
+					class="btn btn-success">
+					<i class="glyphicon glyphicon-plus"></i> Add Student!
+				</button>
+			</div>
+		</div>
 
-    </form>
+	</form>
 </div>
 

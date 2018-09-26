@@ -39,15 +39,15 @@ productApp.controller('prodCtrl', function ($scope, $rootScope, $modal, productF
     }, 5000);
 
     $scope.addNewProduct = function () {
-        var studentName = $scope.Name;
-        var email = $scope.Email;
-        var sex = $scope.Sex;
-        var course = $scope.Course;
-        var fee = $scope.Fee;
-        var paid = $scope.Paid;
-        var due = $scope.Due;
-        var address = $scope.Address;
-        var contact = $scope.Contact;
+        var studentName = $scope.studentName;
+        var email = $scope.email;
+        var sex = $scope.sex;
+        var course = $scope.course;
+        var fee = $scope.fee;
+        var paid = $scope.paid;
+        var due = $scope.due;
+        var address = $scope.address;
+        var contact = $scope.contact;
 
         productFactory.addSimpleProduct(studentName, email, sex, course, fee, paid, due, address, contact, function callbackSuccess(data) {
             $scope.alert = {
